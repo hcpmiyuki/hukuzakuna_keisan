@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class = "wrapper">
+    <div class = "content">
+        <h3>使い方</h3>
+        <ul>
+            <li>・括弧()を含めた四則演算（*,/,+,-）ができます！</li>
+            <li>・掛け算は省略できません。例えば5(2+1)は5*(2+1)と入力してください!</li>
+        </ul>
+        <form>
+            <a>計算式 </a><input type=text name=line><br>
+            <input type=submit value="計算する">
+        </form>
+        <p>計算結果： {{ans}}</p>
+    </div>
+</div>
+{% endblock %}
