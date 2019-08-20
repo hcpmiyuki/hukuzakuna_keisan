@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-
+import os
 from flask import Flask,render_template,request
 from calculator_tools import *
 from preprocessing import *
@@ -21,4 +21,4 @@ def top():
     return render_template('top.html', ans=answer)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
