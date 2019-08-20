@@ -10,8 +10,10 @@ app = Flask(__name__)
 
 @app.route('/')
 def top():
+    # 全角を半角に、空白を削除する
     line = preprocessing(request.args.get('line', ''))
-
+    
+    # 不正な入力（記号の連続、数字と記号以外の入力等）を防ぐ
     if validator(line) == True:
         tokens = tokenize(line)
         preferentially_evaluated_token = prioritizeParentheses(tokens)
