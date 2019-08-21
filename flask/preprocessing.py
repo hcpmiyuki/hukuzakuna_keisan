@@ -12,7 +12,7 @@ def preprocessing(line):
 def validator(line):
     listed_line = list(line)
     num_pattern = ["0" ,"1", "2", "3", "4", "5", "6", "7", "8", "9"]
-    symbol_pattern = ["+", "-", "*", "/"]
+    symbol_pattern = [".","+", "-", "*", "/"]
     kakko_pattern = [")", "("]
     l_kakko_count = 0
     r_kakko_count = 0
@@ -20,6 +20,12 @@ def validator(line):
         # patternに含まれなかったらfalse
         if (not listed_line[i] in num_pattern) and (not listed_line[i] in symbol_pattern) and (not listed_line[i] in kakko_pattern):
             return "使用できない記号または数字以外の文字列が入力されています"
+
+        if (listed_line[i] == "." or listed_line[i] == "*" or listed_line[i] == "/") and i == 0:
+            return "不正な入力です"
+
+        if (listed_line[i] == "*" or listed_line[i] == "/") and i == (len(line)-1):
+            return "不正な入力です"
         # symbolが連続していたらfalse
         if i != 0 and (listed_line[i] in symbol_pattern) and (listed_line[i-1] in symbol_pattern):
             return "不正な入力です"
