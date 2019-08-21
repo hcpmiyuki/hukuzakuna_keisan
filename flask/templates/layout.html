@@ -2,6 +2,7 @@
 <html>
 <head>
 <title>ふくざつな計算は任せて！</title>
+<meta name="viewport" content="width=device-width">
 </head>
 <body>
     <header>
@@ -11,34 +12,45 @@
 <!-- ここにメインコンテンツを書く -->
 {% endblock %}
 <footer>
-    <a><small>copyright</small> hcpmiyuki</a>
+    <a><small>copyright@i_am_hcp</small></a>
 </footer>
 </body>
 
 </html>
 <style>
 
-body{
-    width: 90%;
-    margin: 0 auto;
-    text-align: center;
+@media screen and (min-width:0px){
+    body{
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+
+    }
+
+    .content{
+        padding: 1.8rem 0;
+        background-color: rgba(0, 191, 191, 0.7);
+    }
+
+    li{
+        list-style: none;
+    }
+
+    form{
+        padding: 0.9rem 0;
+    }
+
+    ul{
+        padding-left: 0;
+    }
 
 }
 
-.content{
-    padding: 1.8rem 0;
-    background-color: rgba(0, 191, 191, 0.7);
+@media screen and (min-width:481px){
+    #input_field{
+        width: 300px;
+    }
 }
 
-li{
-    list-style: none;
-}
 
-form{
-    padding: 0.9rem 0;
-}
-
-input #textfield{
-    width: 300px;
-}
 </style>
