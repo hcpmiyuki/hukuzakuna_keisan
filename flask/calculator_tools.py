@@ -116,7 +116,7 @@ def evaluateAS(tokens):
 def evaluateAll(tokens):
     md_tokens = evaluateMD(tokens)
     answer = evaluateAS(md_tokens)
-    return answer
+    return round(answer * (10**9)) / 10**9
 
 
 # calculate in parentheses preferentially
